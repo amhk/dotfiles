@@ -33,6 +33,7 @@ alias dotfiles='git --git-dir="${HOME}"/.dotfiles.git --work-tree="${HOME}"'
 # exports
 export EDITOR=vim
 export PATH="$HOME/bin:$PATH"
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 
 
 # bash prompt
