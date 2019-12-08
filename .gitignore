@@ -1,0 +1,7 @@
+*.pyc
+.*.swp
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+tags

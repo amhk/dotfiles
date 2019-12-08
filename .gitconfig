@@ -1,0 +1,32 @@
+[user]
+    name = Mårten Kongstad
+    email = marten.kongstad@gmail.com
+
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+    abbrev = 11
+
+[rerere]
+    enabled = true
+
+[push]
+    default = simple
+
+[rebase]
+    autosquash = true
+
+[color]
+    ui = auto
+
+[diff]
+    algorithm = patience
+    indentHeuristic = true
+
+[alias]
+    logg = log --format='%h%C(auto,green)%d%C(auto,reset) %C(auto,yellow)%an %C(auto,cyan)%cr%C(auto,reset) %s'
+    stat = status -s
+    merge-topic = merge --no-ff --log --signoff --edit
+    reorder-fixups = "!GIT_SEQUENCE_EDITOR=\"sed -i -e 's/^fixup/pick/'\" git rebase --autosquash --interactive"
+
+# vi: ft=gitconfig
