@@ -15,6 +15,8 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -f "$HOME/.config/bash/git-completion.bash" ] && source "$HOME/.config/bash/git-completion.bash"
 [ -f "$HOME/.config/bash/git-prompt.sh" ] && source "$HOME/.config/bash/git-prompt.sh"
+[ -f "$HOME/.fzf/shell/completion.bash" ] && source "$HOME/.fzf/shell/completion.bash"
+[ -f "$HOME/.fzf/shell/key-bindings.bash" ] && source "$HOME/.fzf/shell/key-bindings.bash"
 
 
 # bash setup
@@ -33,7 +35,7 @@ alias i3lock='i3lock -c "#000000"'
 
 # exports
 export EDITOR=vim
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.fzf/bin:$PATH"
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 
 
