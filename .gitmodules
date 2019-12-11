@@ -1,3 +1,27 @@
 [submodule ".fzf"]
 	path = .fzf
 	url = https://github.com/junegunn/fzf
+[submodule ".vim/pack/plugins/start/file-line"]
+	path = .vim/pack/plugins/start/file-line
+	url = https://github.com/bogado/file-line
+[submodule ".vim/pack/plugins/start/vim-toml"]
+	path = .vim/pack/plugins/start/vim-toml
+	url = https://github.com/cespare/vim-toml
+[submodule ".vim/pack/plugins/start/async.vim"]
+	path = .vim/pack/plugins/start/async.vim
+	url = https://github.com/prabirshrestha/async.vim
+[submodule ".vim/pack/plugins/start/asyncomplete-lsp.vim"]
+	path = .vim/pack/plugins/start/asyncomplete-lsp.vim
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
+[submodule ".vim/pack/plugins/start/asyncomplete.vim"]
+	path = .vim/pack/plugins/start/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim
+[submodule ".vim/pack/plugins/start/vim-lsp"]
+	path = .vim/pack/plugins/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
+[submodule ".vim/pack/plugins/start/vim-clang-format"]
+	path = .vim/pack/plugins/start/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format
+[submodule ".vim/pack/plugins/start/kotlin-vim"]
+	path = .vim/pack/plugins/start/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim
