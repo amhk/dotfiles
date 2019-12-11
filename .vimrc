@@ -93,3 +93,7 @@ if executable('rls')
 		\ 'whitelist': ['rust'],
 		\ })
 endif
+
+" FZF
+set rtp+=~/.fzf
+noremap § :FZF<cr>

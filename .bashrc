@@ -39,6 +39,10 @@ export PATH="$HOME/bin:$HOME/.fzf/bin:$PATH"
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 
 
+# bindings
+bind -x '"§"':'"fzf | xargs -ro vim"'
+
+
 # bash prompt
 function _prompt_command() {
 	# retval
