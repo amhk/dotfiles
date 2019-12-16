@@ -13,5 +13,9 @@ automatically recognize it. This is
 ## Installation
 
 ```
-curl -o- https://gist.github.com/amhk/86d34c544fcc5c4ec38b0a5b0b7f63a7/raw | bash
+$ git clone --bare https://github.com/amhk/dotfiles $HOME/.dotfiles.git
+$ alias dotfiles='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
+$ dotfiles config status.showUntrackedFiles no
+$ dotfiles checkout
+$ dotfiles submodule update --init --recursive
 ```
