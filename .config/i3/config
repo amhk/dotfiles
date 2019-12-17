@@ -168,6 +168,7 @@ bar {
 		inactive_workspace	#000000	#000000	#ffffff
 		urgent_workspace	#dd0000	#ff0000	#000000
 	}
+    tray_output primary
 }
 
 # colors        border	backgr	text	indicator
