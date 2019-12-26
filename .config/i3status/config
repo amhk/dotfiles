@@ -6,6 +6,7 @@ general {
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
+order += "battery 1"
 order += "load"
 order += "tztime local"
 
@@ -21,12 +22,23 @@ ethernet _first_ {
 
 battery 0 {
     format = "%status %percentage"
-    format_down = "No battery"
+    format_down = ""
     status_chr = "CHR"
     status_bat = "BAT"
     status_unk = "UNK"
     status_full = "FULL"
-    path = "/sys/class/power_supply/BAT%d/uevent"
+    last_full_capacity = true
+    low_threshold = 10
+}
+
+battery 1 {
+    format = "%status %percentage"
+    format_down = ""
+    status_chr = "CHR"
+    status_bat = "BAT"
+    status_unk = "UNK"
+    status_full = "FULL"
+    last_full_capacity = true
     low_threshold = 10
 }
 
