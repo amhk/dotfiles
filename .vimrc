@@ -46,6 +46,8 @@ au FileType gitcommit set spell
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+au BufRead,BufNewFile *.aidl set filetype=java
+
 function GitBlame()
 	let l:path = expand('%')
 	let l:line = line('.')
