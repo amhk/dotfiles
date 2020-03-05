@@ -36,7 +36,7 @@ alias groot='git rev-parse --is-inside-work-dir >/dev/null && cd "$(git rev-pars
 
 # exports
 export EDITOR=vim
-export PATH="$HOME/bin:$HOME/.fzf/bin:$PATH"
+export PATH="$HOME/bin:$HOME/local/bin:$HOME/.fzf/bin:$PATH"
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 
 
