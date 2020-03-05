@@ -183,6 +183,8 @@ exec xsetroot -solid '#222222'
 # custom keybindings (to find the class, use xprop | grep -e class, use the last string)
 bindsym XF86Sleep exec --no-startup-id i3lock -c '#000000'
 bindsym XF86Launch1 exec --no-startup-id i3lock -c '#000000'
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym F9 [class="Alacritty" title="master"] focus
 bindsym F10 [class="Alacritty" title="slave"] focus
 bindsym F11 [class="Alacritty" title="logcat"] focus
