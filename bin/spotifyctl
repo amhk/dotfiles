@@ -1,0 +1,68 @@
+#!/bin/bash
+
+_get_sink_id() {
+    pactl list sink-inputs | awk '
+        /^\tSink: [0-9]+/ { current_sink=$2; }
+        /application.name = "spotify"/ { print current_sink; exit 0; }
+    '
+}
+
+_increase_volume() {
+    local id
+
+    id=$(_get_sink_id)
+    if [[ "$id" ]]; then
+        pactl set-sink-volume "$id" '+5%'
+    fi
+}
+
+_decrease_volume() {
+    local id
+
+    id=$(_get_sink_id)
+    if [[ "$id" ]]; then
+        pactl set-sink-volume "$id" '-5%'
+    fi
+}
+
+_play_pause() {
+    dbus-send \
+        --print-reply \
+        --dest=org.mpris.MediaPlayer2.spotify \
+        /org/mpris/MediaPlayer2 \
+        org.mpris.MediaPlayer2.Player.PlayPause
+}
+
+_previous() {
+    dbus-send \
+        --print-reply \
+        --dest=org.mpris.MediaPlayer2.spotify \
+        /org/mpris/MediaPlayer2 \
+        org.mpris.MediaPlayer2.Player.Previous
+}
+
+_next() {
+    dbus-send \
+        --print-reply \
+        --dest=org.mpris.MediaPlayer2.spotify \
+        /org/mpris/MediaPlayer2 \
+        org.mpris.MediaPlayer2.Player.Next
+}
+
+case "$*" in
+    volume-up)
+        _increase_volume
+        ;;
+    volume-down)
+        _decrease_volume
+        ;;
+    play-pause)
+        _play_pause
+        ;;
+    previous)
+        _previous
+        ;;
+    next)
+        _next
+        ;;
+esac
