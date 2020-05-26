@@ -25,3 +25,6 @@
 [submodule ".vim/pack/plugins/start/kotlin-vim"]
 	path = .vim/pack/plugins/start/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim
+[submodule ".vim/pack/plugins/start/blueprint-vim-syntax"]
+	path = .vim/pack/plugins/start/blueprint-vim-syntax
+	url = https://github.com/psyill/blueprint-vim-syntax
