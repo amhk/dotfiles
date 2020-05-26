@@ -20,6 +20,10 @@ set fenc=utf-8
 " no double spaces when formatting lines with gq
 set nojoinspaces
 
+" don't fold automatically when opening files, but still allow folding
+" commands (e.g. zM to close all folds)
+set nofoldenable
+
 " filetype based stuff
 autocmd VimEnter * :syntax on
 let c_space_errors = 1
