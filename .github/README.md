@@ -19,3 +19,18 @@ $ dotfiles config status.showUntrackedFiles no
 $ dotfiles checkout
 $ dotfiles submodule update --init --recursive
 ```
+
+
+## Maintenance
+
+Periodically run
+
+```
+$ dotfiles pull --recurse-submodules
+$ dotfiles submodule update --remote
+# update ~/.config/bash/git-*.sh from the git project
+# update ~/.config/fzf/* from the fzf project
+# update ~/.github/README.md (this file) with new timestamp
+```
+
+Latest maintenance performed on 2022-02-16.
