@@ -91,11 +91,10 @@ autocmd FileType cpp  nnoremap ö :ClangFormat<cr>
 autocmd FileType cpp  vnoremap ö :ClangFormat<cr>
 autocmd FileType rust nnoremap ö :RustFmt<cr>
 
-if executable('rls')
+if executable('rust-analyzer')
 	au User lsp_setup call lsp#register_server({
-		\ 'name': 'rls',
-		\ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-		\ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+		\ 'name': 'rust-analyzer',
+		\ 'cmd': {server_info->['rust-analyzer']},
 		\ 'whitelist': ['rust'],
 		\ })
 endif
