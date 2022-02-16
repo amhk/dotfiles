@@ -15,8 +15,8 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -f "$HOME/.config/bash/git-completion.bash" ] && source "$HOME/.config/bash/git-completion.bash"
 [ -f "$HOME/.config/bash/git-prompt.sh" ] && source "$HOME/.config/bash/git-prompt.sh"
-[ -f "$HOME/.fzf/shell/completion.bash" ] && source "$HOME/.fzf/shell/completion.bash"
-[ -f "$HOME/.fzf/shell/key-bindings.bash" ] && source "$HOME/.fzf/shell/key-bindings.bash"
+[ -f "$HOME/.config/fzf/completion.bash" ] && source "$HOME/.config/fzf/completion.bash"
+[ -f "$HOME/.config/fzf/key-bindings.bash" ] && source "$HOME/.config/fzf/key-bindings.bash"
 
 
 # bash setup
