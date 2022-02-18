@@ -100,5 +100,4 @@ if executable('rust-analyzer')
 endif
 
 " FZF
-set rtp+=~/.fzf
 noremap § :FZF<cr>
