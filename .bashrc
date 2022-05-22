@@ -46,42 +46,51 @@ bind -x '"§"':'"fzf | xargs -ro vim"'
 
 # bash prompt
 function _prompt_command() {
-	# retval
-	local retval=$?
-	if [ $retval -eq 0 ]; then
-		retval=""
-	else
-		retval=" $retval"
-	fi
+    # retval
+    local retval=$?
+    if [ $retval -eq 0 ]; then
+        retval=""
+    else
+        retval=" $retval"
+    fi
 
-	# git
-	local git
-	git="$(__git_ps1)"
+    # git
+    local git
+    git="$(__git_ps1)"
 
-	## path (tree/leaf, with leaf in different color)
-	local path leaf tree available padding
-	path="${PWD/$HOME/'~'}"
-	leaf="$(basename "$path")"
-	tree="${path%$leaf}"
-	available=$((COLUMNS - ${#retval} - ${#git} - ${#leaf}))
-	if [ ${#tree} -gt ${available} ]; then
-		tree="...${tree: -$((available - 3))}"
-		padding=${#leaf}
-	else
-		padding=$((COLUMNS - ${#retval} - ${#git} - ${#tree}))
-	fi
+    # hostname (if ssh)
+    local hostname hostname_padding
+    if [[ -n "${SSH_CLIENT}" ]]; then
+        hostname="$(hostname -s)"
+        hostname_padding=" "
+    fi
 
-	# create prompt
-	export PS1
-	local red='\e[0;31m'
-	local yellow='\e[0;33m'
-	local cyan='\e[0;36m'
-	local CYAN='\e[1;36m'
-	local reset='\e[39m'
+    # path (tree/leaf, with leaf in different color)
+    local path leaf tree available padding
+    path="${PWD/$HOME/'~'}"
+    leaf="$(basename "$path")"
+    tree="${path%$leaf}"
+    available=$((COLUMNS - ${#retval} - ${#git} - ${#hostname} - ${#hostname_padding} - ${#leaf}))
+    if [ ${#tree} -gt ${available} ]; then
+        tree="...${tree: -$((available - 3))}"
+        padding=${#leaf}
+    else
+        padding=$((COLUMNS - ${#retval} - ${#git} - ${#hostname} - ${#hostname_padding} - ${#tree}))
+    fi
 
-	PS1=$(printf "${cyan}%s${CYAN}%-${padding}s${yellow}%s${red}%s${reset}\n\\$ " \
-		"$tree" "$leaf" \
-		"$git" "$retval"
-	)
+    # assemble prompt
+    export PS1
+    local black_on_cyan red yellow cyan CYAN reset
+    black_on_cyan='\e[46;30m'
+    red='\e[0;31m'
+    yellow='\e[0;33m'
+    cyan='\e[0;36m'
+    CYAN='\e[1;36m'
+    reset='\e[39;49m'
+    PS1=$(printf "${black_on_cyan}%s${reset}%s${cyan}%s${CYAN}%-${padding}s${yellow}%s${red}%s${reset}\n\\$ " \
+        "$hostname" "$hostname_padding" \
+        "$tree" "$leaf" \
+        "$git" "$retval"
+    )
 }
 export PROMPT_COMMAND=_prompt_command
