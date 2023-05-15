@@ -28,9 +28,11 @@ Periodically run
 ```
 $ dotfiles pull --recurse-submodules
 $ dotfiles submodule update --remote
+$ dotfiles add -u ~/.vim/pack/plugins/start && dotfiles commit -s
+
 # update ~/.config/bash/git-*.sh from the git project
 # update ~/.config/fzf/* from the fzf project
 # update ~/.github/README.md (this file) with new timestamp
 ```
 
-Latest maintenance performed on 2022-02-16.
+Latest maintenance performed on 2022-05-15.
