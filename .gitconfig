@@ -29,4 +29,7 @@
     merge-topic = merge --no-ff --log --signoff --edit
     reorder-fixups = "!GIT_SEQUENCE_EDITOR=\"sed -i -e 's/^fixup/pick/'\" git rebase --autosquash --interactive"
 
+[init]
+	defaultBranch = main
+
 # vi: ft=gitconfig
