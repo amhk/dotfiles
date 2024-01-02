@@ -35,13 +35,13 @@ alias groot='git rev-parse --is-inside-work-dir >/dev/null && cd "$(git rev-pars
 
 
 # exports
-export EDITOR=vim
+export EDITOR=nvim
 export PATH="$HOME/bin:$HOME/local/bin:$HOME/.fzf/bin:$PATH"
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 
 
 # bindings
-bind -x '"§"':'"fzf | xargs -ro vim"'
+bind -x '"§"':'"fzf | xargs -ro nvim"'
 
 
 # bash prompt
