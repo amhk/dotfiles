@@ -13,6 +13,7 @@ vim.o.fenc = "utf-8"
 vim.g.mapleader = " "
 vim.keymap.set("n", "<c-n>", ":noh<cr>")
 vim.keymap.set("n", "<c-j>", ":set spell!<cr>")
+vim.keymap.set("n", "<leader><leader>", "<c-^>")
 
 -- miscellaneous
 vim.api.nvim_create_augroup('spellEnabledByDefault', { clear = true })
