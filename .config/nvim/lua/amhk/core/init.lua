@@ -24,3 +24,34 @@ vim.api.nvim_create_autocmd('Filetype', {
 
 vim.cmd("cnoreabbrev W w")
 vim.cmd("cnoreabbrev Q q")
+
+-- git
+-- Run git show on the commit that added the line under cursor
+function GitBlame()
+  -- get the data from git
+  local path = vim.api.nvim_buf_get_name(0)
+  local dir = path:match("(.*)/")
+  local file = path:match(".*/(.*)")
+  local lineno, _ = unpack(vim.api.nvim_win_get_cursor(0))
+  local cmd = "git -C " .. dir .. " blame --porcelain -L" .. lineno .. ",+1 " .. file
+  local proc = assert(io.popen(cmd, 'r'))
+  local commit = proc:read("*all"):match("(%w+)")
+  if commit == nil then
+    return
+  end
+  local proc = assert(io.popen("git -C " .. dir .. " show " .. commit))
+  local data = proc:read("*all")
+
+  -- show the data in a scratch buffer
+  local bufnr = vim.api.nvim_create_buf(false, true)
+  vim.api.nvim_buf_set_option(bufnr, "filetype", "gitcommit")
+  vim.cmd"split"
+  vim.cmd(string.format("buffer %d", bufnr))
+  local lines = {}
+  for line in string.gmatch(data, "([^\n]+)\n") do
+    table.insert(lines, line)
+  end
+  vim.api.nvim_buf_set_lines(0, 0, 0, true, lines)
+  vim.api.nvim_win_set_cursor(0, {1, 0})
+end
+vim.keymap.set("n", "gb", ":lua GitBlame()<cr>")
