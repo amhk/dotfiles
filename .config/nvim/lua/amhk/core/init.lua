@@ -8,6 +8,7 @@ vim.o.visualbell = true
 vim.o.nojoinspaces = true
 vim.o.enc = "utf-8"
 vim.o.fenc = "utf-8"
+vim.o.mouse = ""
 
 -- global key mappings
 vim.g.mapleader = " "
