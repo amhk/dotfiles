@@ -10,7 +10,9 @@ automatically recognize it. This is
 [by design](https://github.com/licensee/licensee/issues/250).
 
 
-## Installation
+## Initial installation
+
+### Install dotfiles
 
 ```
 $ git clone --bare https://github.com/amhk/dotfiles $HOME/.dotfiles.git
@@ -18,6 +20,31 @@ $ alias dotfiles='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
 $ dotfiles config status.showUntrackedFiles no
 $ dotfiles checkout
 $ dotfiles submodule update --init --recursive
+```
+
+### Install commonly used packages
+
+Install the following packages
+
+```
+fzf ripgrep fd-find eza
+```
+
+### Install Rust
+
+Install rustup from the system package manager, then run
+
+```
+$ rustup default stable
+$ rustup component add rust-analyzer
+```
+
+### Install neovim (from source)
+
+```
+$ mkdir ~/src && $ cd ~/src
+$ git clone https://github.com/neovim/neovim && $ cd neovim
+$ rm -rf build && make -j128 CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/local" && make -j128 install
 ```
 
 
