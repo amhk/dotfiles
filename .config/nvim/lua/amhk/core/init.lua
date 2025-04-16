@@ -5,7 +5,6 @@ vim.o.showmatch = true
 vim.o.incsearch = true
 vim.o.hlsearch = true
 vim.o.visualbell = true
-vim.o.nojoinspaces = true
 vim.o.enc = "utf-8"
 vim.o.fenc = "utf-8"
 vim.o.mouse = ""
