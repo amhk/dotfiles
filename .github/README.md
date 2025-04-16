@@ -26,7 +26,13 @@ $ dotfiles checkout
 Install the following packages
 
 ```
-fzf ripgrep fd-find eza
+dunst
+eza
+fd-find
+fzf
+ripgrep
+sway
+swaylock
 ```
 
 ### Install Rust
