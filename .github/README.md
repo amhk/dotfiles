@@ -19,7 +19,6 @@ $ git clone --bare https://github.com/amhk/dotfiles $HOME/.dotfiles.git
 $ alias dotfiles='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
 $ dotfiles config status.showUntrackedFiles no
 $ dotfiles checkout
-$ dotfiles submodule update --init --recursive
 ```
 
 ### Install commonly used packages
@@ -50,16 +49,9 @@ $ rm -rf build && make -j128 CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE
 
 ## Maintenance
 
-Periodically run
+Periodically
 
 ```
-$ dotfiles pull --recurse-submodules
-$ dotfiles submodule update --remote
-$ dotfiles add -u ~/.vim/pack/plugins/start && dotfiles commit -s
-
 # update ~/.config/bash/git-*.sh from the git project
 # update ~/.config/fzf/* from the fzf project
-# update ~/.github/README.md (this file) with new timestamp
 ```
-
-Latest maintenance performed on 2022-05-15.
