@@ -12,7 +12,6 @@
 
 
 # source other scripts
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -f "$HOME/.config/bash/git-completion.bash" ] && source "$HOME/.config/bash/git-completion.bash"
 [ -f "$HOME/.config/bash/git-prompt.sh" ] && source "$HOME/.config/bash/git-prompt.sh"
 [ -f "$HOME/.config/fzf/completion.bash" ] && source "$HOME/.config/fzf/completion.bash"
