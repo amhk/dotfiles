@@ -32,6 +32,9 @@ alias ls='eza'
 alias dotfiles='git --git-dir="${HOME}"/.dotfiles.git --work-tree="${HOME}"'
 alias i3lock='i3lock -c "#000000"'
 alias groot='git rev-parse --is-inside-work-dir >/dev/null && cd "$(git rev-parse --show-toplevel)"'
+alias vim='nvim'
+alias view='nvim -R'
+alias nview=view
 
 
 # exports
