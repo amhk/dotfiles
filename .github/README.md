@@ -29,10 +29,14 @@ Install the following packages
 dunst
 eza
 fd-find
+fuzzel
 fzf
+grim
 ripgrep
+slurp
 sway
 swaylock
+wl-clipboard
 ```
 
 ### Install Rust
