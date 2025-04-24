@@ -114,6 +114,9 @@ bindsym XF86Launch1 exec "$locker; sleep 2; systemctl suspend"
     bindsym $mod+p exec dunstctl close
     bindsym $mod+Shift+p exec dunstctl history-pop
     bindsym $mod+o exec dunstctl context
+
+    # grab screenshot
+    bindsym $mod+Shift+s exec grim -g "$(slurp -d)" /tmp/screenshot.png && wl-copy </tmp/screenshot.png
 #
 # Moving around:
 #
