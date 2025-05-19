@@ -1,8 +1,2 @@
 # smart case works like in vim
 --smart-case
-
-# use "<path>:<line>: <match>" format
-# (which happens to play nice with vim's cfile)
---no-heading
---with-filename
---line-number

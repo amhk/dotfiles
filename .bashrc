@@ -33,6 +33,7 @@ alias groot='git rev-parse --is-inside-work-dir >/dev/null && cd "$(git rev-pars
 alias vim='nvim'
 alias view='nvim -R'
 alias nview=view
+alias rgg='rg --no-heading --with-filename --line-number'
 
 
 # exports
