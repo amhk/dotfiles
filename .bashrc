@@ -12,6 +12,7 @@
 
 
 # source other scripts
+[ -f "/usr/share/bash-completion/bash_completion" ] && source "/usr/share/bash-completion/bash_completion"
 [ -f "$HOME/.config/bash/git-completion.bash" ] && source "$HOME/.config/bash/git-completion.bash"
 [ -f "$HOME/.config/bash/git-prompt.sh" ] && source "$HOME/.config/bash/git-prompt.sh"
 [ -f "$HOME/.config/fzf/key-bindings.bash" ] && source "$HOME/.config/fzf/key-bindings.bash"
