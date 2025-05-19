@@ -56,3 +56,9 @@ function GitBlame()
   vim.api.nvim_win_set_cursor(0, {1, 0})
 end
 vim.keymap.set("n", "gb", ":lua GitBlame()<cr>")
+
+vim.api.nvim_create_autocmd({'BufWinEnter'}, {
+  desc = 'return cursor to where it was when file was last closed',
+  pattern = '*',
+  command = 'silent! normal! g`"zv',
+})
