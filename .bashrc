@@ -22,6 +22,7 @@
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
+export COLORTERM=truecolor
 shopt -s histappend
 shopt -s checkwinsize
 
