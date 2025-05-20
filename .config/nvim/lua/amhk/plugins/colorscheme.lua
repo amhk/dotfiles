@@ -1,22 +1,13 @@
 return {
-	"bluz71/vim-nightfly-colors",
-	priority = 1000,
-	config = function()
-		vim.cmd([[colorscheme nightfly]])
-	end,
+  -- copied from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.lua
+  "wincent/base16-nvim",
+  lazy = false, -- load at start
+  priority = 1000, -- load first
+  config = function()
+    vim.cmd([[colorscheme gruvbox-dark-hard]])
 
-	-- "ellisonleao/gruvbox.nvim",
-	-- priority = 1000,
-	-- config = function()
-	-- 	vim.cmd([[colorscheme gruvbox]])
-	-- end,
-
-	-- "navarasu/onedark.nvim",
-	-- priority = 1000,
-	-- config = function()
-    --     require('onedark').setup {
-    --         style = 'light'
-    --     }
-	-- 	vim.cmd([[colorscheme onedark]])
-	-- end,
+    -- make comments stand out more (use same color as for booleans)
+    local boolean_color = vim.api.nvim_get_hl(0, { name = 'Boolean' })
+    vim.api.nvim_set_hl(0, 'Comment', boolean_color)
+  end,
 }
