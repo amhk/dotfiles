@@ -45,7 +45,8 @@ export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 
 
 # bindings
-bind -x '"§"':'"fzf | xargs -ro nvim"'
+# \eOP is F1 (found by typing `ctrl-v f1` in a bash shell)
+bind -x '"\eOP"':'"fzf | xargs -ro nvim"'
 
 
 # bash prompt
