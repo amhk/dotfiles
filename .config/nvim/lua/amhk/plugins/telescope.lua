@@ -9,6 +9,6 @@ return {
 		telescope.setup({})
 
 		local keymap = vim.keymap
-		keymap.set("n", "§", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+		keymap.set("n", "<F1>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 	end,
 }
