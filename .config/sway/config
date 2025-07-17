@@ -10,7 +10,8 @@
 set $mod Mod4
 
 input type:keyboard {
-    xkb_layout se
+    xkb_layout us
+    xkb_variant altgr-intl
     xkb_options caps:super
 }
 
