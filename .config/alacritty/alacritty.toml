@@ -46,3 +46,8 @@ family = "Inconsolata Nerd Font"
 
 [general]
 live_config_reload = true
+
+[mouse]
+bindings = [
+    { mouse = "Left", mods = "None", action = "Copy" },
+]
