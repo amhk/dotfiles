@@ -51,3 +51,6 @@ live_config_reload = true
 bindings = [
     { mouse = "Left", mods = "None", action = "Copy" },
 ]
+
+[selection]
+save_to_clipboard = true
